@@ -21,7 +21,7 @@
     <main>
         <h3>Caso haja quaisquer dúvidas, sugestões ou avisos, por favor entre em contato conosco!</h3>
         <p>Preencha os campos por favor:</p>
-        <form action="" method="post">
+        <form name="contato" action="" method="post">
             <div class="row">
                 <div class="col-sm">
                     <label for="nome" class="form-label"> Nome: </label>
@@ -37,21 +37,22 @@
             <div class="mt-4">
                 <p>Sobre qual assunto deseja tratar?</p>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="op1">
+                    <input type="checkbox" class="form-check-input" id="op1" name="checks">
                     <label for="op1" class="form-check-label">Opção 1</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="op2">
+                    <input type="checkbox" class="form-check-input" id="op2" name="checks">
                     <label for="op2" class="form-check-label">Opção 2</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="op3">
+                    <input type="checkbox" class="form-check-input" id="op3" name="checks">
                     <label for="op3" class="form-check-label">Opção 3</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="termos">
+                    <input type="checkbox" class="form-check-input" id="termos" name="checks">
                     <label for="termos" class="form-check-label">Concordo</label>
                 </div>
+                <span></span>
             </div>
             <div class="mt-4">
                 <p>Marque a opção:</p>
@@ -67,10 +68,11 @@
             <div class="form-group mt-4">
                 <label class="mb-2" for="exampleFormControlTextarea1">Sua pergunta, sugestão ou dúvida: </label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva Aqui"></textarea>
+                <span></span>
             </div>
             <div class="mt-4">
-                <button type="submit" class="btn btn-primary">Verificar</button>
-                <button type="reset" class="btn btn-primary">Limpar</button>
+                <button id="verifica" class="btn btn-primary">Verificar</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
             </div>
         </form>
     </main>
