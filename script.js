@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     botaolimpa.onclick = limpa;
     var botaolimpa2 = document.getElementById('limpa2');
     botaolimpa2.onclick = limpa;
-    var botaoedita = document.getElementById('edita');
-    botaoedita.onclick = fecha;
-
 });
 
 function limpa() {
@@ -18,10 +15,6 @@ function limpa() {
 
 }
 
-function fecha() {
-    var apresentacao = document.getElementById('escondida');
-    apresentacao.style.display = 'none';
-}
 
 function verifica(){
 
@@ -29,7 +22,7 @@ function verifica(){
 
     const nome = document.getElementById('nome');
     const email = document.getElementById('email');
-    const checks = document.querySelectorAll("input[name='checks']");
+    const checks = document.querySelectorAll("input[name='checks[]']");
     const radio = document.querySelector("input[name='opcoes']:checked");
     const texto = document.getElementById('areaTexti');
 

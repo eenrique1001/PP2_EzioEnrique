@@ -10,15 +10,9 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <img src="images/logosite.png" alt="logo do site" id="logo">
-        <h1>Curabitur</h1>
-        <nav class="menu">
-            <ul>
-                <li class="active"><a href="home.html">Home</a></li><li><a href="about.html">Sobre nós</a></li><li><a href="contact.html">Contate-nos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php
+        include_once('header.php');
+    ?>
     <main>
         <article>
             <section>
@@ -240,19 +234,14 @@
             <section>
                 <h4>Contato <span class="badge bg-warning">Importante!</span></h4>
                 <p>Se você tiver alguma dúvida, desejar contribuir ou se envolver em nossos esforços, entre em contato 
-                    conosco por meio da <a href="contact.html">aba de contato</a>, ou por email ou telefone. 
+                    conosco por meio da <a href="contact.php">aba de contato</a>, ou por email ou telefone. 
                     Estamos aqui para ajudar e criar um impacto positivo na luta contra a malária.</p>
             </section>
         </article>
     </main>
-    <footer>
-        <p><br>Contato:</p>
-        <p>
-            E-mail: <a href="mailto:contato@institutocurabitur.org">contato@institutocurabitur.org</a> <br>
-            Telefone: <a href="tel:+1 (555) 123-4567">+1 (555) 123-4567</a> <br>
-            All Rights Reserved 2023
-        </p>
-    </footer>
+    <?php
+        include_once('footer.php');
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

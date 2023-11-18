@@ -11,15 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img src="images/logosite.png" alt="logo do site" id="logo">
-        <h1>Curabitur</h1>
-        <nav class="menu">
-            <ul>
-                <li><a href="home.html">Home</a></li><li class="active"><a href="about.html">Sobre nós</a></li><li><a href="contact.html">Contate-nos</a></li>
-            </ul>
-        </nav>
-    </header>   
+    <?php
+        include_once('header.php');
+    ?>   
     <main>
         <article>
             <section>
@@ -124,20 +118,15 @@
                     Telefone: +1 (555) 123-4567
                 </p>
                 <p>
-                    Acesse nossa <a href="contact.html">página de contato</a> também para mais dúvidas ou sugestões, ou caso queira avisar sobre focos do mosquito.
+                    Acesse nossa <a href="contact.php">página de contato</a> também para mais dúvidas ou sugestões, ou caso queira avisar sobre focos do mosquito.
                     Estamos ansiosos para trabalhar juntos na luta contra a malária e criar um futuro mais saudável para todos.
                 </p>
             </section>
         </article>
     </main>
-    <footer>
-        <p><br>Contato:</p>
-        <p>
-            E-mail: <a href="mailto:contato@institutocurabitur.org">contato@institutocurabitur.org</a> <br>
-            Telefone: <a href="tel:+1 (555) 123-4567">+1 (555) 123-4567</a> <br>
-            All Rights Reserved 2023
-        </p>
-    </footer>
+    <?php
+        include_once('footer.php');
+    ?>
     
 </body>
 </html>
