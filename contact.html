@@ -75,21 +75,31 @@
                 <button id="verifica" class="btn btn-primary">Verificar</button>
                 <button id="limpa" name="limpa" type="reset" class="btn btn-secondary">Limpar</button>
             </div>
-            <div id="escondida" style="display: none;" class="rounded border border-info mt-4 p-3">
-                <h6 style="color: rgb(0, 112, 97)">Por favor, confira a entrada:</h6>
-                <p>Nome: <span name="spans"></span></p>
-                <p>Email: <span name="spans"></span></p>
-                <p>Assunto(s): <span name="spans"></span></p>
-                <p>Já trabalhou conosco: <span name="spans"></span></p>
-                <p>Texto: <br><span name="spans"></span></p>
-                <div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <button id="limpa2" type="reset" class="btn btn-secondary">Limpar</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
+            <div class="modal" tabindex="-1" id="exampleModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Por favor, confira os dados:</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Nome: <span name="spans"></span></p>
+                        <p>Email: <span name="spans"></span></p>
+                        <p>Assunto(s): <span name="spans"></span></p>
+                        <p>Já trabalhou conosco: <span name="spans"></span></p>
+                        <p>Texto: <br><span name="spans"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button id="limpa2" type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpar</button>
+                        <button id="edita" type="button" class="btn btn-warning" data-bs-dismiss="modal">Editar</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
         </form>
     </main>
+      
     <footer>
         <p><br>Contato:</p>
         <p>

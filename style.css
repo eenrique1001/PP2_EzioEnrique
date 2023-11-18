@@ -81,6 +81,29 @@ section {
     margin-top: 5%;
 }
 
+.imgetexto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgetexto img {
+    display: block;
+    width: 50%;
+    height: auto;
+
+}
+
+.imgetexto p {
+    color: rgb(59, 59, 59);
+    margin-bottom: 0;
+}
+
+.centraliza {
+    text-align: center;
+}
+
 footer {
     background-color: black;
     overflow: hidden;

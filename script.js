@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     botaolimpa.onclick = limpa;
     var botaolimpa2 = document.getElementById('limpa2');
     botaolimpa2.onclick = limpa;
-
+    var botaoedita = document.getElementById('edita');
+    botaoedita.onclick = fecha;
 
 });
 
@@ -14,15 +15,18 @@ function limpa() {
         for(let span of spans){
             span.textContent = "";
         }
-        const node = document.getElementById('escondida');
-        node.style.display = 'none';
+
+}
+
+function fecha() {
+    var apresentacao = document.getElementById('escondida');
+    apresentacao.style.display = 'none';
 }
 
 function verifica(){
 
     var flag = true;
 
-    const formulario = document.querySelector('form');
     const nome = document.getElementById('nome');
     const email = document.getElementById('email');
     const checks = document.querySelectorAll("input[name='checks']");
@@ -115,9 +119,8 @@ function verifica(){
 
 function apresentar(nome, email, assunto, opcoes, texto){
     const flag = false;
-
-    const node = document.getElementById('escondida');
-    node.style.display = 'block';
+    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
+    myModal.show();
     const span = document.querySelectorAll('span[name="spans"]');
 
     for(let spans of span){
