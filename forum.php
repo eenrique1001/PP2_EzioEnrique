@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,98 @@
         include_once('header.php');
     ?>
     <main>
-        <article>
-            <h4>Aqui é fórum, onde você pode encontrar perguntas, sugestões ou avisos de outros usuários.</h4>
-        </article>
+        <h4 class="mt-4">Aqui é o fórum, onde você pode encontrar perguntas, sugestões ou avisos de outros usuários.</h4>
+        <form name="basico" action="" method="post">
+            <div class="mt-4 p-3 border border-warning">
+                <p>Como deseja filtrar?</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="filtros" value="Mosquito">
+                    <label for="sim" class="form-check-label">Mosquito</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="filtros" value="Doença">
+                    <label for="nao" class="form-check-label">Doença</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="filtros" value="Tratamento">
+                    <label for="nao" class="form-check-label">Tratamento</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="filtros" value="Preciso de Ajuda">
+                    <label for="nao" class="form-check-label">Preciso de Ajuda</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="filtros" value="Todos" checked>
+                    <label for="nao" class="form-check-label">Todos</label>
+                </div>
+                <div class="mt-4">
+                    <button id="mostra" name="mostra" type="submit" class="btn btn-primary">Mostrar</button>
+                </div>
+            </div>       
+        </form>
+        <div class="mt-4">
+            <h6>Resultados: </h6>
+            <?php
+            if(isset($_POST['mostra'])){
+                require 'conexao.php';
+                $pdo = mysqlConnect();
+                $escolha = $_POST['filtros'];
+                $opcoes = array(
+                    "Mosquito" => 2,
+                    "Doença" => 3,
+                    "Preciso de Ajuda" => 7,
+                    "Tratamento" => 5,
+                    "Todos" => 1
+                );
+        
+                try{
+                    $sql = <<<SQL
+                        SELECT Nome, Assunto, Texto
+                        FROM Contato
+                        WHERE MOD(Assunto, $opcoes[$escolha]) = 0;
+                        SQL;
+                    $stmt = $pdo->query($sql);
+        
+                }
+                catch (Exception $e){
+                    exit('Ocorreu uma falha '.$e->getMessage());
+                }
+                
+                while($row = $stmt->fetch()){
+                    $nome = htmlspecialchars($row['Nome']);
+                    $assunto = $row['Assunto'];
+                    $texto = htmlspecialchars($row['Texto']);
+        
+                    $key = "";
+        
+                    if($assunto%2 == 0)
+                        $key .= array_search(2, $opcoes).", ";
+                    if($assunto%3 == 0)
+                        $key .= array_search(3, $opcoes).", ";
+                    if($assunto%5 == 0)
+                        $key .= array_search(5, $opcoes).", ";
+                    if($assunto%7 == 0)
+                        $key .= array_search(7, $opcoes).", ";
+
+                    $key = rtrim($key, ', ');
+        
+                    echo $div = <<<DIV
+                    <div class="forum">
+                        <div>
+                            <p>$nome</p>
+                            <p>$key</p>
+                        </div>
+                        <p>$texto</p>
+                    </div>
+                    DIV;
+                }
+            }
+            ?>
+        </div>
     </main>   
     <?php
         include_once('footer.php');
     ?>
 </body>
 </html>
+
